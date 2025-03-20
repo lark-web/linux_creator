@@ -29,6 +29,7 @@ class ExampleApp(QMainWindow,Ui_MainWindow):
         #file_br_config = open(work_directory/ "br-config","w+")
         path = self.work_directory + '/br-config'
         print(path)
+        print(self.work_directory)
         if os.path.isfile(path):
             print('file br-config already exist')
             self.statusbar.showMessage("file br-config already exist")
@@ -40,6 +41,7 @@ class ExampleApp(QMainWindow,Ui_MainWindow):
                 fp.write("BR2_EXTERNAL = $PWD/apps \n ")
                 #fp.write("#!BR2_JLEVEL = "$(($(nproc) -2)) \n"" )
                 fp.close()
+
         # creating some  dir..es
         path = self.work_directory + '/apps'
         if os.path.exists(path):
